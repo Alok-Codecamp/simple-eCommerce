@@ -1,0 +1,24 @@
+.SingleProducts-container{
+    background-color: antiquewhite;
+    margin: 40px;
+    border-radius: 6px;
+}
+.delete-btn{
+    background: orangered;
+    height: 35px;
+    width: 80px;
+    border-radius: 20px;
+    color: aliceblue;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+}
+.Details-btn{
+    background: orangered;
+    height: 35px;
+    width: 80px;
+    border-radius: 20px;
+    color: aliceblue;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
