@@ -15,22 +15,24 @@
 
 .homepage-body{
     display: grid;
-    grid-template-columns:auto auto auto auto auto auto ;
+    grid-template-columns:auto auto auto auto auto auto auto auto  ;
 }
 .search-box{
-    border: 2px solid red;
+    
     grid-column-start:1;
-    grid-column-end: 6;
+    grid-column-end: 8;
 }
 .left-sidebar{
-    border: 2px solid black;
+    
+    background-color: orangered;
+    color: white;
     grid-column-start:1;
-    grid-column-end: 2;
+    grid-column-end:2;
 }
 .products-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    border: 2px solid orange;
-    grid-column-start:2;
-    grid-column-end: 7;
+   
+    grid-column-start:3;
+    grid-column-end: 8;
 }

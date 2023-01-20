@@ -2,6 +2,14 @@
     background-color: antiquewhite;
     margin: 40px;
     border-radius: 6px;
+    height:350px;
+    width:350px;
+}
+.display-img{
+    width: 325px;
+    height: 200px;
+    margin-top: 14px;
+    border-radius: 10px;
 }
 .delete-btn{
     background: orangered;

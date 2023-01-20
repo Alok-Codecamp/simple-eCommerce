@@ -1,9 +1,11 @@
 import { type } from '@testing-library/user-event/dist/type'
 import React, { SetStateAction } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap';
+import './PopUp.css';
 // interface for state setter function 
 interface iProps{
   name:string;
+  image:string;
   brand:string;
   price:string;
   size:string;
@@ -15,7 +17,7 @@ interface iProps{
 }
 
 // component start here 
-function PopUp({name,brand,size,price,category,year,show,setShowModal,setConfirmDelete}:iProps) {
+function PopUp({name,image,brand,size,price,category,year,show,setShowModal,setConfirmDelete}:iProps) {
   const handleClose=()=>{
     setShowModal(false);
   }
@@ -24,16 +26,24 @@ function PopUp({name,brand,size,price,category,year,show,setShowModal,setConfirm
   }
   return (
     <div>
-       <Modal show={show} onHide={handleClose}>
+       <Modal className='Modal-container' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Product details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <div className='modal-data-container'>
+          <div className='img-part'>
+          <img className='popup-img' src={image} alt={name} />
           <p>{name}</p>
-          <p>{brand}</p>
-          <p>{price}</p>
-          <p>{size}</p>
-          <p>{category}</p>
+          </div>
+          <div className='details-part'> 
+          <p>Name: {name}</p>
+          <p>Price: {price}</p>
+          <p>Brand: {brand}</p>
+          <p>Size: {size}</p>
+          <p>Category: {category}</p>
+          </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>

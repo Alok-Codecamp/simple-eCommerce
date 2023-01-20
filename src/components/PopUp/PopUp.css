@@ -1,0 +1,15 @@
+.modal-data-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-img{
+    width: 220px;
+}
+.img-part{
+    margin-right:20px;
+}
+.img-part>p{
+font-size: 24px;
+font-weight: 500;
+}

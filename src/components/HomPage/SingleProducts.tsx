@@ -6,6 +6,7 @@ interface deleteBtn{
 }
 interface IPROPS{
   name:string;
+  image:string;
   brand:string;
   price:string;
   size:string;
@@ -14,7 +15,7 @@ interface IPROPS{
   getDelete:deleteBtn[];
   setDelete: React.Dispatch<SetStateAction<deleteBtn[]>>;
 }
-function SingleProducts({name,brand,price,size,category,year,getDelete,setDelete}:IPROPS){
+function SingleProducts({name,image,brand,price,size,category,year,getDelete,setDelete}:IPROPS){
 
   const handleDelete=()=>{
       setDelete([{productName:name,show:true}]);
@@ -22,13 +23,11 @@ function SingleProducts({name,brand,price,size,category,year,getDelete,setDelete
   }
   return (
     <div className='SingleProducts-container'>
+      <img className='display-img' src={image} alt={name} />
       <p>name: {name}</p>
-      <p>brand: {brand}</p>
-      <p>size: {size}</p>
       <p>price: {price}</p>
-      <p>brand: {brand}</p>
       <button className='delete-btn' onClick={handleDelete}>Delete</button>
-      <button className='Details-btn'>Details</button>
+      <button className='Details-btn' onClick={handleDelete}>Details</button>
     </div>
   )
 }

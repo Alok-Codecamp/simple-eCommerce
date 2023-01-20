@@ -95,13 +95,15 @@ const handleSearch=()=>{
       setConfirmDelete(false)
 
      }
-     
-  },[getDelete,confirmDelete,filteredData,showModal])
+     if(showModal){
+      setShowModal(false)
+     }
+  },[getDelete,confirmDelete,filteredData])
   
   return (
     <>
         <div className="search-box">
-                <input type="text" placeholder='Search here' onChange={e=>setSearch(e.target.value)}/>
+                <input type="text" placeholder='Please enter the correct Product Name' onChange={e=>setSearch(e.target.value)}/>
                 <button className='search-button'onClick={handleSearch}><FontAwesomeIcon size={'lg'} icon={["fas","magnifying-glass"]}/></button>
             </div>
         <div className="homepage-body">
@@ -121,6 +123,7 @@ const handleSearch=()=>{
               
               return Year||shoes? <SingleProducts
                name={sd.name} 
+               image={sd.image}
                brand={sd.brand}
                price={sd.price}
                size={sd.size}
@@ -128,7 +131,8 @@ const handleSearch=()=>{
                year={sd.year}
                getDelete={getDelete}
                setDelete={setDelete} ></SingleProducts>:<SingleProducts
-               name={sd.name} 
+               name={sd.name}
+               image={sd.image} 
                brand={sd.brand}
                price={sd.price}
                size={sd.size}
@@ -149,7 +153,8 @@ const handleSearch=()=>{
              show={showModal} 
              setConfirmDelete={setConfirmDelete}
              setShowModal={setShowModal}
-             name={productDetails[0]?.name} 
+             name={productDetails[0]?.name}
+             image={productDetails[0].image} 
              brand={productDetails[0]?.brand}
              price={productDetails[0]?.price}
              size={productDetails[0]?.size}
